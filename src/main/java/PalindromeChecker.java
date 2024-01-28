@@ -25,7 +25,7 @@ public void tester()
   System.out.println("there are " + lines.length + " lines");
   for (int i=0; i < lines.length; i++) 
   {
-    if(palindrome(lines[i])==true)
+    if(palindrome(clean(lines[i]))==true)
     {
       System.out.println(lines[i] + " IS a palindrome.");
     }
@@ -37,13 +37,25 @@ public void tester()
 }
 public boolean palindrome(String word)
 {
-  //your code here
+ if(word.equals(reverse(word)))
+    return true;
+  else
   return false;
 }
 public String reverse(String str)
 {
     String sNew = new String();
-    //your code here
+    for(int i = str.length() - 1; i >= 0; i--) 
+    sNew += str.charAt(i);
     return sNew;
+}
+public String clean(String word){
+  String ballsBad = new String();
+  for(int i = 0; i < word.length(); i++)
+  {
+    if(Character.isLetter(word.charAt(i)))
+    ballsBad += word.charAt(i);
+  }
+  return ballsBad.toLowerCase();
 }
 }
