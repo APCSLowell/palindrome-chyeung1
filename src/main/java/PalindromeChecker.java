@@ -35,21 +35,21 @@ public void tester()
     }
   }
 }
-public boolean palindrome(String word)
+public static boolean palindrome(String word)
 {
  if(word.equals(reverse(word)))
     return true;
   else
   return false;
 }
-public String reverse(String str)
+public static String reverse(String str)
 {
     String sNew = new String();
     for(int i = str.length() - 1; i >= 0; i--) 
     sNew += str.charAt(i);
     return sNew;
 }
-public String clean(String word){
+public static String clean(String word){
   String ballsBad = new String();
   for(int i = 0; i < word.length(); i++)
   {
