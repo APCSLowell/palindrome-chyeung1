@@ -25,7 +25,7 @@ public void tester()
   System.out.println("there are " + lines.length + " lines");
   for (int i=0; i < lines.length; i++) 
   {
-    if(palindrome(clean(lines[i]))==true)
+    if(palindrome(lines[i])==true)
     {
       System.out.println(lines[i] + " IS a palindrome.");
     }
@@ -37,7 +37,7 @@ public void tester()
 }
 public static boolean palindrome(String word)
 {
- if(word.equals(reverse(word)))
+ if(word.equals(clean(reverse(word))))
     return true;
   else
   return false;
